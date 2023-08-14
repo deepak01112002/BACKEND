@@ -4,7 +4,6 @@ const express = require("express")
 const {connection} = require("./db")
 const cors = require("cors")
 const { userRoutes } = require("./Routes/userRoutes")
-const { BlogModel } = require("./Model/blog.model")
 const { blogRoutes } = require("./Routes/blogRoutes")
 
 const app = express()

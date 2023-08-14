@@ -6,6 +6,15 @@ const { UserModel } = require("../Model/userModel")
 
 const userRoutes = express.Router()
 
+userRoutes.get("/",async(req,res)=>{
+    try {
+        const data = await UserModel.find()
+        res.status(200).send({"msg" : "Get all data", "data" : data})
+    } catch (error) {
+        res.status(400).send({"msg" : error.message})
+    }
+})
+
 userRoutes.post("/register",async(req,res)=>{
     const {name,email,password} = req.body
     try {
